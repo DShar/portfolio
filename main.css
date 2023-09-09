@@ -82,7 +82,7 @@ h6 {
 
 /*---------------End section------------------*/
 
-/*-------------Header ---------------*/
+
 html {
   scroll-behavior: smooth;
 }
@@ -98,19 +98,23 @@ html {
 	text-transform: uppercase;
 }
 
+
+.container{
+	max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*-------------Header ---------------*/
+
+
 header{
 	background-color: var(--main-color);
 	color: var(--nav-txt-color);
 	text-transform: uppercase;
-	padding: 55px 135px;
-	font-size: 36px;
+	padding: 55px 10%;
 	font-weight: 400;
 	border-bottom: 1px solid var(--nav-txt-color);
-}
-
-.container{
-	max-width: 1170px;
-    margin: 0 auto;
 }
 
 .header-container{
@@ -153,7 +157,7 @@ nav .menu__item a:hover{
 	color: var(--nav-txt-color);
 	font-size: 36px;
 	font-weight: 400;
-	padding: 135px 55px 150px 55px;
+	padding: 135px 10% 150px 10%;
 }
 
 .about-container{
@@ -162,9 +166,6 @@ nav .menu__item a:hover{
 	gap: 10px;
 }
 
-.about__block{
-	width: 45%;
-}
 
 .about__info{
 	display: flex;
@@ -172,7 +173,7 @@ nav .menu__item a:hover{
 	justify-content: space-around;
 }
 
-.about__title{
+.about__title {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 64px;
 	font-weight: 800;
@@ -216,7 +217,7 @@ nav .menu__item a:hover{
 
 .skills{
 	font-family: 'Montserrat', sans-serif;
-	padding: 135px 55px 150px 55px;
+	padding: 135px 10% 150px 10%;
 	background: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=1060&t=st=1694089585~exp=1694090185~hmac=3f13bb344a3266a9a569e59e8757b87e56bb2d40dee84c991c7f7b2757052616")
 				 top left / cover;
 }
@@ -225,7 +226,7 @@ nav .menu__item a:hover{
 	margin-bottom: 70px;
 }
 
-.skills__title h2{
+.skills__title {
 	font-size: 72px;
 	font-weight: 800;
 	color: var(--main-color);
@@ -251,7 +252,6 @@ nav .menu__item a:hover{
 }
 
 .skill__name{
-	font-size: 64px;
 	font-weight: 800;
 	color: var(--nav-txt-color);
 	text-align: center;
@@ -281,14 +281,14 @@ nav .menu__item a:hover{
 	background-color: var(--main-color);
 	font-family: 'Montserrat', sans-serif;
 	color: var(--nav-txt-color);
-	padding: 135px 55px 150px 55px;
+	padding: 135px 10% 150px 10%;
 }
 
 .projects__title{
 	margin-bottom: 70px;
 }
 
-.projects__title h2{
+.projects__title {
 	font-size: 72px;
 	font-weight: 800;
 	text-align: center;
@@ -351,14 +351,14 @@ nav .menu__item a:hover{
 	background-color: var(--bg-color-light_pink);
 	font-family: 'Montserrat', sans-serif;
 	color: black;
-	padding: 135px 340px 150px 340px;
+	padding: 135px 20% 150px 20%;
 }
 
 .form__title{
 	margin-bottom: 70px;
 }
 
-.form__title h2{
+.form__title {
 	font-size: 72px;
 	font-weight: 800;
 	text-align: center;
@@ -413,7 +413,7 @@ nav .menu__item a:hover{
 
 .contacts{
 	font-family: 'Montserrat', sans-serif;
-	padding: 135px 55px 150px 55px;
+	padding: 135px 10% 150px 10%;
 	background: url("https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=1380&t=st=1694198761~exp=1694199361~hmac=427e03451a234dfa73fe143a49cc59339355f753701a45a33e41565851fe19e1")
 				top left / cover ;
 }
@@ -422,7 +422,7 @@ nav .menu__item a:hover{
 	margin-bottom: 70px;
 }
 
-.contacts__title h2{
+.contacts__title {
 	font-size: 72px;
 	font-weight: 800;
 	text-align: center;
@@ -521,3 +521,184 @@ footer .menu__item a:hover{
 }
 
 /*---------------End section------------------*/
+
+
+/* -----------------MEDIA---------------------*/
+
+@media screen and (min-width: 1180px){
+	header{
+		font-size: 36px;
+	}
+
+	.about__block{
+		width: 45%;
+	}
+
+	.skill__name{
+		font-size: 64px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1179px) {
+	header{
+		font-size: 36px;
+	}
+
+	.menu-list {
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+	.nickname__wrapper {
+		display: flex;
+    	align-items: center;
+	}
+
+	.about-container {
+		flex-direction: column-reverse;
+    	align-items: center;
+    	gap: 20px;
+	}
+
+	.about__block{
+		width: 85%;
+	}
+
+	.about__info {
+		text-align: center;
+	}
+
+	.about__info :not(:last-child) {
+		margin-bottom: 10%;
+	}
+
+	.skills__list{
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+	}
+
+	.skill {
+		width: 55%;
+	}
+
+	.skill__name{
+		font-size: 48px;
+	}
+
+	.contacts__list {
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.contact {
+		padding: 15% 2%;
+		width: 50%;
+	}
+
+
+}
+
+@media screen and (max-width: 767px){
+	header{
+		font-size: 24px;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.about-me, .skills, .projects, .contacts {
+		padding-top: 75px;
+		padding-bottom: 100px;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	footer {
+		font-size: 24px;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.menu-list {
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+	.nickname__wrapper {
+		display: flex;
+    	align-items: center;
+	}
+
+	.about-container {
+		flex-direction: column-reverse;
+    	align-items: center;
+    	gap: 20px;
+	}
+
+	.about__title, .skills__title, .form__title, .projects__title, .contacts__title {
+		font-size: 56px;
+	}
+
+	.about__info {
+		text-align: center;
+	}
+
+	.about__info :not(:last-child) {
+		margin-bottom: 10%;
+	}
+	.about__block{
+		width: 75%;
+	}
+
+	.skills__list{
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+	}
+
+	.skill {
+		width: 100%;
+	}
+
+	.skill__name{
+		font-size: 48px;
+	}
+
+	.form__wrapper {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.request__field {
+		padding: 15px 5%;
+	}
+
+	.request__btns {
+		flex-direction: column;
+	}
+
+	.request__btn {
+		width: 100%;
+		font-size: 24px;
+	}
+
+	.contacts__list {
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.contact {
+		padding: 15% 2%;
+		width: 50%;
+	}
+
+	.contact__name h3 {
+    	font-size: 24px;
+	}
+
+	.contact__link a {
+		font-size: 20px;
+	}
+}
