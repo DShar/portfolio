@@ -668,6 +668,10 @@ footer .menu__item a:hover{
     	align-items: center;
 	}
 
+	.about-me {
+		font-size: 24px;
+	}
+	
 	.about-container {
 		flex-direction: column-reverse;
     	align-items: center;
@@ -675,7 +679,7 @@ footer .menu__item a:hover{
 	}
 
 	.about__title, .skills__title, .form__title, .projects__title, .contacts__title {
-		font-size: 56px;
+		font-size: 38px;
 	}
 
 	.about__info {
@@ -727,6 +731,14 @@ footer .menu__item a:hover{
 		width: 100%;
 		padding: 0 5%;
 		margin-bottom: 5%;
+	}
+	
+	.project__description h3 {
+    		font-size: 40px;
+	}
+
+	.project__description p {
+		font-size: 24px;
 	}
 
 	.form__wrapper {
