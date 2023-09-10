@@ -573,13 +573,21 @@ footer .menu__item a:hover{
 	}
 
 	.skills__list{
-		flex-direction: column;
-		gap: 20px;
-		align-items: center;
+		display: block;
 	}
 
 	.skill {
 		width: 55%;
+		margin-bottom: -14%;
+	}
+
+	.skill:nth-child(3n+2) {
+		margin-left: 25%;
+	}	
+
+	.skill:nth-child(3n) {
+		margin-bottom: 0;
+		margin-left: 50%;
 	}
 
 	.skill__name{
@@ -695,7 +703,7 @@ footer .menu__item a:hover{
 	}
 
 	.contact__name h3 {
-    	font-size: 24px;
+    		font-size: 24px;
 	}
 
 	.contact__link a {
