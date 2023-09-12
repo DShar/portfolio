@@ -107,9 +107,11 @@ html {
 
 /*-------------Header ---------------*/
 
+body {
+	background-color: var(--main-color);
+}
 
 header{
-	background-color: var(--main-color);
 	color: var(--nav-txt-color);
 	text-transform: uppercase;
 	padding: 55px 10%;
@@ -133,21 +135,35 @@ nav .menu-list{
 	gap:40px;
 }
 
-nav .menu__item{
+.menu__item{
 	font-family: 'Inter', sans-serif;
 	list-style-type: none;
 }
 
-nav .menu__item a{
-	text-decoration: solid 1px;
+.menu__item a{
 	color: var(--nav-txt-color);
 	border-bottom: solid 2px;
+	position: relative;
 }
 
-nav .menu__item a:hover{
-	border-bottom: 0;
+.menu__item a::after {
+	content: " ";
+	position: absolute;
+	inset: 0;
+	background-color: var(--nav-txt-color);
+	z-index: -1;
+	transform: scaleY(0);
+	transition: transform .3s ease;
+	transform-origin: bottom;
 }
 
+.menu__item a:hover::after{
+	transform: scaleY(1);
+}
+
+.menu__item a:hover {
+	color: var(--main-color);
+}
 /*---------------End section------------------*/
 
 /*-------------Section About ---------------*/
@@ -194,9 +210,7 @@ nav .menu__item a:hover{
 }
 
 .about__contact-btn:hover{
-  color: var(--nav-txt-color);
-  background-color: var(--main-color);
-  border: 1px solid var(--nav-txt-color);
+  animation: gradient 0.5s ease-in-out infinite reverse;
 }
 
 .about__image-wrapper{
@@ -204,6 +218,8 @@ nav .menu__item a:hover{
 	border-bottom: solid 4px;
 	border-color: var(--nav-txt-color);
 	overflow: hidden;
+	box-shadow: 0 5px 25px var(--nav-txt-color);
+	animation: float 2s ease-in-out infinite;
 }
 
 .about__image-wrapper img{
@@ -249,6 +265,10 @@ nav .menu__item a:hover{
 .skill:nth-child(2n){
 	background-color: var(--bg-color-ash_rose);
 	border: 5px solid var(--main-color);
+}
+
+.skill:hover {
+	animation: shake 0.3s alternate 1;
 }
 
 .skill__name{
@@ -480,7 +500,6 @@ nav .menu__item a:hover{
 }
 
 footer{
-	background-color: var(--main-color);
 	color: var(--nav-txt-color);
 	text-transform: uppercase;
 	padding: 55px 135px;
@@ -503,21 +522,6 @@ footer .nickname__wrapper p{
 footer .menu-list{
 	display: flex;
 	gap:40px;
-}
-
-footer .menu__item{
-	font-family: 'Inter', sans-serif;
-	list-style-type: none;
-}
-
-footer .menu__item a{
-	text-decoration: solid 1px;
-	color: var(--nav-txt-color);
-	border-bottom: solid 2px;
-}
-
-footer .menu__item a:hover{
-	border-bottom: 0;
 }
 
 /*---------------End section------------------*/
@@ -671,7 +675,7 @@ footer .menu__item a:hover{
 	.about-me {
 		font-size: 24px;
 	}
-	
+
 	.about-container {
 		flex-direction: column-reverse;
     	align-items: center;
@@ -679,7 +683,7 @@ footer .menu__item a:hover{
 	}
 
 	.about__title, .skills__title, .form__title, .projects__title, .contacts__title {
-		font-size: 38px;
+		font-size: 40px;
 	}
 
 	.about__info {
@@ -732,7 +736,7 @@ footer .menu__item a:hover{
 		padding: 0 5%;
 		margin-bottom: 5%;
 	}
-	
+
 	.project__description h3 {
     		font-size: 40px;
 	}
@@ -740,6 +744,7 @@ footer .menu__item a:hover{
 	.project__description p {
 		font-size: 24px;
 	}
+
 
 	.form__wrapper {
 		padding-left: 5%;
@@ -778,3 +783,67 @@ footer .menu__item a:hover{
 		font-size: 20px;
 	}
 }
+
+
+
+/*----------------End Section------------------*/
+
+/*-----------------KeyFrames-------------------*/
+
+@keyframes gradient {
+	0% {
+		background-image: linear-gradient(to top right,#a4e5e9, #836096, #ff7864, #fbbe2f );
+	}
+
+	25% {
+		background-image: linear-gradient(to top right, #836096, #ff7864, #fbbe2f, #a4e5e9);
+	}
+
+	50% {
+		background-image: linear-gradient(to top right, #ff7864, #fbbe2f, #a4e5e9, #836096);
+	}
+
+	75% {
+		background-image: linear-gradient(to top right, #fbbe2f, #a4e5e9, #836096, #ff7864);
+	}
+
+	100% {
+		background-image: linear-gradient(to top right,#a4e5e9, #836096, #ff7864, #fbbe2f );
+	}
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 25px var(--nav-txt-color);
+		transform: translateY(0px);
+	}
+
+	50% {
+		box-shadow: 0 20px 25px var(--nav-txt-color);
+		transform: translateY(-15px);
+	}
+
+	100% {
+		box-shadow: 0 5px 25px var(--nav-txt-color);
+		transform: translateY(0px);
+	}
+}
+
+@keyframes shake {
+	0%, 50%, 100% {
+		transform: rotate(0deg);
+    	transform-origin: bottom;
+	}
+
+	25% {
+		transform: rotate(-15deg);
+    	transform-origin: bottom;
+	}
+
+	75% {
+		transform: rotate(15deg);
+    	transform-origin: bottom;
+	}
+}
+
+/*----------------End Section------------------*/
